@@ -26,7 +26,7 @@
           <a class="pill" href="#experience">Experience</a>
           <a class="pill" href="#publications">Publications</a>
           <a class="pill" href="#education">Education</a>
-          <a class="pill" href="#hobbies">Hobbies</a>
+          <a class="pill" href="#mentorship">Mentorship</a>
           <a class="pill" href="#contact">Contact</a>
         </nav>
       </div>
@@ -34,7 +34,7 @@
 
     <!-- 3-column “portal” layout -->
     <div class="portal" id="content">
-      <!-- LEFT SIDEBAR BUTTONS -->
+      <!-- LEFT SIDEBAR -->
       <aside class="side left" aria-label="Shortcuts">
         <div class="widget">
           <div class="widget-title">Quick Links</div>
@@ -42,20 +42,22 @@
             <a class="sidebtn sb1" href="assets/Jorge_Ruballos_Resume.pdf" target="_blank" rel="noopener">My Resume</a>
             <a class="sidebtn sb2" href="https://github.com/jlruballos" target="_blank" rel="noopener">My GitHub</a>
             <a class="sidebtn sb3" href="https://www.linkedin.com/in/jorge-ruballos-44957291/" target="_blank" rel="noopener">My LinkedIn</a>
+            <a class="sidebtn sb4" href="mailto:jlruballos@gmail.com">Email Me</a>
           </div>
         </div>
 
+        <!-- NOW -> EDUCATION bubble -->
         <div class="widget">
-          <div class="widget-title">Now</div>
+          <div class="widget-title">Education (Now)</div>
           <ul class="mini">
-            <li>OSU Robotics (M.S.)</li>
-            <li>SHARE Lab research</li>
-            <li>DETECT longitudinal modeling</li>
+            <li><strong>M.S. Robotics</strong> — Oregon State University (in progress)</li>
+            <li><strong>Lab:</strong> SHARE Lab (Advisor: Dr. Naomi Fitter)</li>
+            <li><strong>B.S. Computer Engineering</strong> — Cal Poly Pomona</li>
           </ul>
         </div>
       </aside>
 
-      <!-- CENTER CONTENT CARD -->
+      <!-- CENTER CONTENT -->
       <main class="center">
         <section class="card">
           <div class="card-top">
@@ -65,8 +67,8 @@
 
           <div class="hero">
             <div class="portrait-box">
-              <img src="assets/JR2.png" alt="Headshot of Jorge Ruballos" />
-              <div class="status">
+              <img src="assets/headshot.png" alt="Headshot of Jorge Ruballos" />
+              <div class="statusline">
                 <span class="dot" aria-hidden="true"></span>
                 Corvallis, OR • Spanish • Robotics / ML / Systems
               </div>
@@ -141,7 +143,7 @@
               <div class="trole">Engineer (SCADA / Control Systems) — Metropolitan Water District</div>
               <div class="tmeta">Oct 2016 – Jan 2022</div>
               <ul>
-                <li>Data acquisition modernization; large operational databases and AMR network administration.</li>
+                <li>Data acquisition modernization; operational databases and AMR network administration.</li>
                 <li>Security audits and internal cybersecurity training; C++/Ladder Logic updates and test plans.</li>
               </ul>
             </div>
@@ -157,7 +159,6 @@
           </ul>
         </section>
 
-        <!-- NEW: EDUCATION -->
         <section id="education" class="card">
           <h2 class="section-title">Education</h2>
           <div class="edu">
@@ -165,7 +166,7 @@
               <div class="trole">M.S. Robotics — Oregon State University</div>
               <div class="tmeta">Sep 2023 – Present • SHARE Lab (Advisor: Dr. Naomi Fitter)</div>
               <ul>
-                <li>Research: human-centered robotics, longitudinal health sensing, applied ML evaluation.</li>
+                <li>Human-centered robotics; longitudinal health sensing; applied ML evaluation.</li>
                 <li>Leadership: Robotics Graduate Student Association (Co-President).</li>
               </ul>
             </div>
@@ -177,23 +178,32 @@
           </div>
         </section>
 
-        <!-- NEW: HOBBIES -->
-        <section id="hobbies" class="card">
-          <h2 class="section-title">Hobbies</h2>
-          <div class="hobbies">
-            <div class="bubble">
-              <h3>Tennis / Pickleball</h3>
-              <p>Training for performance: footwork, conditioning, strength work, and consistency.</p>
-            </div>
-            <div class="bubble">
-              <h3>Robotics tinkering</h3>
-              <p>Hardware + integration projects (sensors, embedded code, robot behaviors) outside of coursework.</p>
-            </div>
-            <div class="bubble">
-              <h3>Live music</h3>
-              <p>Concerts and small venues—good reset outside of research cycles.</p>
-            </div>
+        <!-- NEW: Mentorship & Outreach -->
+        <section id="mentorship" class="card">
+          <h2 class="section-title">Mentorship &amp; Outreach</h2>
+          <div class="cards">
+            <article class="mini-card">
+              <h3>Teaching Assistant</h3>
+              <p class="meta">OSU • Controls + Instrumentation</p>
+              <ul class="tight">
+                <li>Support labs, grading, and student troubleshooting (Arduino-based DAQ and controls concepts).</li>
+                <li>Translate theory → practice with clear examples and structured feedback.</li>
+              </ul>
+            </article>
+
+            <article class="mini-card">
+              <h3>Robotics + Older Adult Engagement</h3>
+              <p class="meta">SHARE Lab • In-facility deployments</p>
+              <ul class="tight">
+                <li>Help run human-facing studies and iterate interaction flows for older adult settings.</li>
+                <li>Focus on practical deployment constraints and usability in real environments.</li>
+              </ul>
+            </article>
           </div>
+
+          <p class="fineprint">
+            If you want this section to be more specific (clubs, workshops, recruiting, lab mentoring), tell me what to include and I’ll tune it.
+          </p>
         </section>
 
         <section id="contact" class="card">
@@ -206,23 +216,24 @@
         </section>
       </main>
 
-      <!-- RIGHT SIDEBAR “HISTORY” WIDGET -->
-      <aside class="side right" aria-label="Status">
+      <!-- RIGHT SIDEBAR: Skills + Hobbies -->
+      <aside class="side right" aria-label="Highlights">
         <div class="widget">
-          <div class="widget-title">Status</div>
+          <div class="widget-title">Skills</div>
           <div class="statusbox">
-            <div><strong>Currently:</strong> Research + systems engineering</div>
-            <div><strong>Focus:</strong> longitudinal modeling + robotics integration</div>
-            <div><strong>Tools:</strong> Python/R, ROS, SCADA/I&amp;C</div>
+            <div><strong>ML/Data:</strong> time-series, imputation, survival/recurrent events</div>
+            <div><strong>Robotics:</strong> ROS 1/2, URDF/Xacro, Gazebo/RViz, integration</div>
+            <div><strong>Systems:</strong> SCADA/I&amp;C, FAT/SAT, commissioning, documentation</div>
+            <div><strong>Stack:</strong> Python/R, SQL, Git, Linux</div>
           </div>
         </div>
 
         <div class="widget">
-          <div class="widget-title">Featured</div>
+          <div class="widget-title">Hobbies</div>
           <ul class="mini">
-            <li><a href="#projects">DETECT</a></li>
-            <li><a href="#projects">sammy_ws</a></li>
-            <li><a href="#publications">Publications</a></li>
+            <li>Tennis / pickleball training</li>
+            <li>Robotics tinkering (sensors + embedded)</li>
+            <li>Live music / shows</li>
           </ul>
         </div>
       </aside>
