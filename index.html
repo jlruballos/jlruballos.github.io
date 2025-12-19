@@ -12,14 +12,13 @@
   <a class="skip" href="#content">Skip to content</a>
 
   <div class="page">
-    <header class="masthead">
+    <header class="masthead retro-outset">
       <div class="masthead-inner">
         <div class="mast-title">
           <div class="kicker">Official Home Page</div>
           <h1>Jorge Ruballos</h1>
           <p class="tagline">Robotics • Machine Learning • Control Systems (SCADA/I&amp;C)</p>
         </div>
-
         <nav class="top-pills" aria-label="Primary">
           <a class="pill" href="#projects">Projects</a>
           <a class="pill" href="#experience">Experience</a>
@@ -32,223 +31,138 @@
     </header>
 
     <div class="portal" id="content">
-      <!-- LEFT SIDEBAR -->
+      
       <aside class="side left" aria-label="Shortcuts">
-        <div class="widget">
+        <div class="widget retro-outset">
           <div class="widget-title">Quick Links</div>
-          <div class="stack">
-            <a class="sidebtn" href="assets/Jorge_Ruballos_Resume.pdf" target="_blank" rel="noopener">My Resume</a>
-            <a class="sidebtn" href="https://github.com/jlruballos" target="_blank" rel="noopener">My GitHub</a>
-            <a class="sidebtn" href="https://www.linkedin.com/in/jorge-ruballos-44957291/" target="_blank" rel="noopener">My LinkedIn</a>
-            <a class="sidebtn" href="mailto:jlruballos@gmail.com">Email Me</a>
+          <div class="widget-content">
+            <div class="stack">
+              <a class="sidebtn" href="assets/Jorge_Ruballos_Resume.pdf" target="_blank" rel="noopener">My Resume</a>
+              <a class="sidebtn" href="https://github.com/jlruballos" target="_blank" rel="noopener">My GitHub</a>
+              <a class="sidebtn" href="https://www.linkedin.com/in/jorge-ruballos-44957291/" target="_blank" rel="noopener">My LinkedIn</a>
+              <a class="sidebtn" href="mailto:jlruballos@gmail.com">Email Me</a>
+            </div>
           </div>
         </div>
 
-        <!-- KEEP THIS: sidebar Education (Now) -->
-        <div class="widget">
+        <div class="widget retro-outset">
           <div class="widget-title">Education (Now)</div>
-          <ul class="mini">
-            <li><strong>M.S. Robotics</strong> — Oregon State University (in progress)</li>
-            <li><strong>Lab:</strong> OSU SHARE Lab (Advisor: Dr. Naomi Fitter)</li>
-            <li><strong>B.S. Computer Engineering</strong> — Cal Poly Pomona</li>
-          </ul>
+          <div class="widget-content">
+            <ul class="mini">
+              <li><strong>M.S. Robotics</strong> — Oregon State University</li>
+              <li><strong>Lab:</strong> OSU SHARE Lab</li>
+              <li><strong>B.S. CompEng</strong> — Cal Poly Pomona</li>
+            </ul>
+          </div>
         </div>
       </aside>
 
-      <!-- CENTER -->
       <main class="center">
-        <section class="card">
-          <div class="card-top">
-            <div class="badge">WELCOME</div>
-            <div class="stamp">Updated: <span id="updated"></span></div>
+        
+        <section class="card retro-outset">
+          <div class="section-header">
+            <span>Welcome.exe</span>
+            <span class="stamp">Updated: <span id="updated"></span></span>
           </div>
-
-          <div class="hero">
-            <div class="portrait-box">
-              <img src="assets/headshot.png" alt="Headshot of Jorge Ruballos" />
-              <div class="statusline">
-                <span class="dot" aria-hidden="true"></span>
-                Corvallis, OR • Spanish • Robotics / ML / Systems
+          <div class="section-body retro-inset">
+            <div class="hero">
+              <div class="portrait-box">
+                <img src="assets/headshot.png" alt="Headshot of Jorge Ruballos" />
+                <div class="statusline">
+                  <span class="dot" aria-hidden="true"></span>
+                  Corvallis, OR • Spanish
+                </div>
+              </div>
+              <div class="intro">
+                <h2>About</h2>
+                <p>
+                  I build end-to-end systems across robotics and applied machine learning—spanning data engineering,
+                  longitudinal health sensor modeling, and real-world deployments. I also bring industry experience
+                  in municipal control systems/SCADA.
+                </p>
+                <div class="cta-row">
+                  <a class="pill" href="#projects">See Projects</a>
+                  <a class="pill" href="#contact">Contact</a>
+                </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div class="intro">
-              <h2>About</h2>
-              <p>
-                I build end-to-end systems across robotics and applied machine learning—spanning data engineering,
-                longitudinal health sensor modeling, and real-world deployments. I also bring industry experience
-                in municipal control systems/SCADA, including testing, commissioning, and field investigations.
-              </p>
+        <section id="projects" class="card retro-outset">
+          <div class="section-header">Selected Projects</div>
+          <div class="section-body retro-inset">
+            <div class="cards rows">
+              <article class="mini-card">
+                <h3>DETECT — Longitudinal Health Trend Analysis</h3>
+                <p class="meta">Python / R • time-series, imputation, survival & recurrent events</p>
+                <p>Pipelines for multi-modal longitudinal in-home sensor data: feature engineering, missingness analysis, and survival modeling.</p>
+                <p class="links"><a href="https://github.com/jlruballos/DETECT" target="_blank">View Repository</a></p>
+              </article>
 
-              <div class="cta-row">
-                <a class="pill big" href="#projects">See Projects</a>
-                <a class="pill big" href="#contact">Contact</a>
+              <article class="mini-card">
+                <h3>sammy_ws — Robot Simulator / ROS Workspace</h3>
+                <p class="meta">ROS 2 • simulation / tooling</p>
+                <p>Robotics simulator workspace for experimentation and integration work—supporting iterative development.</p>
+                <p class="links"><a href="https://github.com/jlruballos/sammy_ws" target="_blank">View Repository</a></p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="card retro-outset">
+          <div class="section-header">Experience</div>
+          <div class="section-body retro-inset">
+            <div class="timeline">
+              <div class="titem">
+                <div class="trole">Graduate Research Assistant — OSU SHARE Lab</div>
+                <div class="tmeta">Sep 2023 – Present</div>
+                <ul>
+                  <li>Develop data features from longitudinal sensor data monitoring older adults.</li>
+                  <li>Augment robot software for NRI grant work.</li>
+                </ul>
+              </div>
+              <div class="titem">
+                <div class="trole">Control Systems Engineer — Arcadis</div>
+                <div class="tmeta">Jan 2023 – Present</div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="projects" class="card">
-          <h2 class="section-title">Selected Projects</h2>
-
-          <div class="cards rows">
-            <article class="mini-card">
-              <h3>DETECT — Longitudinal Health Trend Analysis</h3>
-              <p class="meta">Python / R • time-series, imputation, survival & recurrent events</p>
-              <p>
-                Pipelines for multi-modal longitudinal in-home sensor data: feature engineering (rolling/deltas),
-                missingness analysis, imputation, and survival/recurrent-event modeling for outcomes like falls and hospitalization.
-              </p>
-              <p class="links">
-                <a href="https://github.com/jlruballos/DETECT" target="_blank" rel="noopener">Repository</a>
-              </p>
-            </article>
-
-            <article class="mini-card">
-              <h3>sammy_ws — Robot Simulator / ROS Workspace</h3>
-              <p class="meta">ROS 2 • simulation / tooling</p>
-              <p>
-                Robotics simulator workspace for experimentation and integration work—supporting iterative development and reproducible testing.
-              </p>
-              <p class="links">
-                <a href="https://github.com/jlruballos/sammy_ws" target="_blank" rel="noopener">Repository</a>
-              </p>
-            </article>
+        <section id="publications" class="card retro-outset">
+          <div class="section-header">Publications</div>
+          <div class="section-body retro-inset">
+            <ul class="listy">
+              <li><strong>2024:</strong> “I’m glad you remembered my name!” ... (HRI)</li>
+              <li><strong>2025:</strong> “You seem fun!” ... (WPA)</li>
+            </ul>
           </div>
         </section>
 
-        <section id="experience" class="card">
-          <h2 class="section-title">Experience</h2>
-          <div class="timeline">
-            <div class="titem">
-              <div class="trole">Graduate Research Assistant — OSU SHARE Lab</div>
-              <div class="tmeta">Sep 2023 – Present</div>
-              <ul>
-                <li>Develop data features from longitudinal sensor data monitoring older adults; present quarterly updates with NSF AI-CARING collaborators.</li>
-                <li>Augment robot software for NRI grant work on robot-assisted longitudinal physical and cognitive exercise interventions.</li>
-              </ul>
-            </div>
-
-            <div class="titem">
-              <div class="trole">Control Systems Engineer — Arcadis</div>
-              <div class="tmeta">Jan 2023 – Present</div>
-              <ul>
-                <li>I&amp;C/SCADA field investigations, design & construction documentation; FAT/SAT, field checkout, startup and commissioning.</li>
-              </ul>
-            </div>
-
-            <div class="titem">
-              <div class="trole">Engineer (SCADA / Control Systems) — Metropolitan Water District</div>
-              <div class="tmeta">Oct 2016 – Jan 2022</div>
-              <ul>
-                <li>Directed data acquisition modernization; managed operational databases and AMR metering system at scale.</li>
-                <li>Conducted security audits and presented internal cybersecurity awareness sessions; built/updated C++ and Ladder Logic.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- Teaching Experience (resume-based) -->
-        <section id="teaching" class="card">
-          <h2 class="section-title">Teaching Experience</h2>
-
-          <div class="timeline">
-            <div class="titem">
-              <div class="trole">Graduate Teaching Assistant — Systems Dynamics and Control</div>
-              <div class="tmeta">Oregon State University • Sep 2025 – Present</div>
-              <ul>
-                <li>Graded papers, held bi-weekly office hours, and proctored final exam in collaboration with other GTAs.</li>
-              </ul>
-            </div>
-
-            <div class="titem">
-              <div class="trole">Graduate Teaching Assistant — Introduction to Instrumentation and Measurement Systems</div>
-              <div class="tmeta">Oregon State University • Sep 2024 – Dec 2024</div>
-              <ul>
-                <li>Managed four labs per week; demonstrated measurement systems (transduction, signal conditioning, data recording) using Arduino DAQ.</li>
-              </ul>
-            </div>
-
-            <div class="titem">
-              <div class="trole">Supplemental Instruction Leader (Tutor Expert) — Differential Equations & Linear Algebra</div>
-              <div class="tmeta">Mt. San Antonio College • Aug 2022 – Jan 2023</div>
-              <ul>
-                <li>Prepared and ran tutoring sessions for ~15 students twice per week; attendance tripled and grades improved by 1+ letter grade.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="publications" class="card">
-          <h2 class="section-title">Publications</h2>
-          <ul class="listy">
-            <li><span class="tag">2024</span> “I’m glad you remembered my name!” Using Gaze and Names in Robot-Aided Aging Activities (Aging in Place Workshop at HRI).</li>
-            <li><span class="tag">2025</span> “You seem fun! Push a button for a joke”: How Older Adults Respond to Positive and Negative Robot Prompts (WPA).</li>
-            <li><span class="tag">2026</span> Query Complexity and User Age Affects Perceived Naturalness of Response Delay… (ICRA — under review).</li>
-          </ul>
-        </section>
-
-        <!-- Mentorship & Outreach (resume-based) -->
-        <section id="mentorship" class="card">
-          <h2 class="section-title">Mentorship &amp; Outreach</h2>
-
-          <div class="timeline">
-            <div class="titem">
-              <div class="trole">OSU SHARE Lab — Undergraduate Mentoring</div>
-              <div class="tmeta">Graduate Mentor</div>
-              <ul>
-                <li>Mentored multiple undergraduate students; provided guidance across research projects, coding + hardware troubleshooting, and lab operations.</li>
-              </ul>
-            </div>
-
-            <div class="titem">
-              <div class="trole">REU: Robots in the Real World</div>
-              <div class="tmeta">Graduate Lead • Jun–Aug 2024 and Jun–Aug 2025</div>
-              <ul>
-                <li>Primary point of contact for undergraduates, mentors, and advisors; managed questions and concerns.</li>
-                <li>Assisted with weekly seminars and hosted a graduate-student Q&amp;A panel.</li>
-              </ul>
-            </div>
-
-            <div class="titem">
-              <div class="trole">“Summer Step” — Oregon State University</div>
-              <div class="tmeta">Mentor • Sep 2024</div>
-              <ul>
-                <li>Advised incoming graduate students (often from historically marginalized communities) during their transition to graduate school.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" class="card">
-          <h2 class="section-title">Contact</h2>
-          <p class="contact">
-            Email: <a href="mailto:jlruballos@gmail.com">jlruballos@gmail.com</a><br />
-            LinkedIn: <a href="https://www.linkedin.com/in/jorge-ruballos-44957291/" target="_blank" rel="noopener">jorge-ruballos</a><br />
-            GitHub: <a href="https://github.com/jlruballos" target="_blank" rel="noopener">jlruballos</a>
-          </p>
-        </section>
       </main>
 
-      <!-- RIGHT SIDEBAR -->
       <aside class="side right" aria-label="Highlights">
-        <div class="widget">
-          <div class="widget-title">Skills</div>
-          <div class="statusbox">
-            <div><strong>ML/Data:</strong> time-series, feature engineering, imputation (MICE/VAE), survival & recurrent-event analysis</div>
-            <div><strong>Robotics:</strong> ROS 1/2, URDF/Xacro, Gazebo/RViz, integration, C/C++, motion planning</div>
-            <div><strong>Systems:</strong> SCADA/I&amp;C, FAT/SAT, commissioning, documentation</div>
-            <div><strong>Stack:</strong> Python/R, SQL, Git, Linux</div>
+        <div class="widget retro-outset">
+          <div class="widget-title">Technical Skills</div>
+          <div class="widget-content">
+            <div class="statusbox">
+              <p><strong>ML/Data:</strong> Time-series, MICE/VAE, Survival Analysis</p>
+              <p><strong>Robotics:</strong> ROS 1/2, URDF, Gazebo, C++</p>
+              <p><strong>Systems:</strong> SCADA/I&C, FAT/SAT</p>
+            </div>
           </div>
         </div>
 
-        <div class="widget">
+        <div class="widget retro-outset">
           <div class="widget-title">Hobbies</div>
-          <ul class="mini">
-            <li>Tennis / pickleball</li>
-            <li>Robotics tinkering (sensors + embedded)</li>
-            <li>Live music / shows</li>
-          </ul>
+          <div class="widget-content">
+            <ul class="mini">
+              <li>Tennis / pickleball</li>
+              <li>Robotics tinkering</li>
+              <li>Live music</li>
+            </ul>
+          </div>
         </div>
       </aside>
     </div>
@@ -256,7 +170,7 @@
     <footer class="footer">
       <span>© <span id="year"></span> Jorge Ruballos</span>
       <span class="sep">|</span>
-      <span class="tiny">GitHub Pages / HTML / CSS</span>
+      <span>Best viewed in 800x600 resolution</span>
     </footer>
   </div>
 
