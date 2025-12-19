@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jorge Ruballos — Robotics, ML, Control Systems</title>
   <meta name="description" content="Jorge Ruballos — robotics + applied ML, longitudinal health modeling, ROS, control systems/SCADA." />
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Cache-bust: bump v= anytime styles change -->
+  <link rel="stylesheet" href="styles.css?v=2025-12-19" />
 </head>
 
 <body>
@@ -29,6 +30,7 @@
     </header>
 
     <div class="portal" id="content">
+      <!-- LEFT SIDEBAR -->
       <aside class="side left" aria-label="Shortcuts">
         <div class="widget retro-outset">
           <div class="widget-title">Quick Links</div>
@@ -46,14 +48,15 @@
           <div class="widget-title">Education (Now)</div>
           <div class="widget-content">
             <ul class="mini">
-              <li><strong>M.S. Robotics</strong> — Oregon State University</li>
-              <li><strong>Lab:</strong> OSU SHARE Lab</li>
-              <li><strong>B.S. CompEng</strong> — Cal Poly Pomona</li>
+              <li><strong>M.S. Robotics</strong> — Oregon State University (in progress)</li>
+              <li><strong>Lab:</strong> OSU SHARE Lab (Advisor: Dr. Naomi Fitter)</li>
+              <li><strong>B.S. Computer Engineering</strong> — Cal Poly Pomona</li>
             </ul>
           </div>
         </div>
       </aside>
 
+      <!-- CENTER -->
       <main class="center">
         <section class="card retro-outset">
           <div class="section-header">
@@ -66,15 +69,16 @@
                 <img src="assets/headshot.png" alt="Headshot of Jorge Ruballos" />
                 <div class="statusline">
                   <span class="dot" aria-hidden="true"></span>
-                  Corvallis, OR • Spanish
+                  Corvallis, OR • Spanish • Robotics / ML / Systems
                 </div>
               </div>
+
               <div class="intro">
                 <h2>About</h2>
                 <p>
                   I build end-to-end systems across robotics and applied machine learning—spanning data engineering,
                   longitudinal health sensor modeling, and real-world deployments. I also bring industry experience
-                  in municipal control systems/SCADA.
+                  in municipal control systems/SCADA, including testing, commissioning, and field investigations.
                 </p>
                 <div class="cta-row">
                   <a class="pill" href="#projects">See Projects</a>
@@ -92,86 +96,15 @@
               <article class="mini-card">
                 <h3>DETECT — Longitudinal Health Trend Analysis</h3>
                 <p class="meta">Python / R • time-series, imputation, survival & recurrent events</p>
-                <p>Pipelines for multi-modal longitudinal in-home sensor data: feature engineering, missingness analysis, and survival modeling.</p>
-                <p class="links"><a href="https://github.com/jlruballos/DETECT" target="_blank" rel="noopener">View Repository</a></p>
+                <p>
+                  Pipelines for multi-modal longitudinal in-home sensor data: feature engineering (rolling/deltas),
+                  missingness analysis, imputation, and survival/recurrent-event modeling for outcomes like falls and hospitalization.
+                </p>
+                <p class="links"><a href="https://github.com/jlruballos/DETECT" target="_blank" rel="noopener">Repository</a></p>
               </article>
 
               <article class="mini-card">
                 <h3>sammy_ws — Robot Simulator / ROS Workspace</h3>
                 <p class="meta">ROS 2 • simulation / tooling</p>
-                <p>Robotics simulator workspace for experimentation and integration work—supporting iterative development.</p>
-                <p class="links"><a href="https://github.com/jlruballos/sammy_ws" target="_blank" rel="noopener">View Repository</a></p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section id="experience" class="card retro-outset">
-          <div class="section-header">Experience</div>
-          <div class="section-body retro-inset">
-            <div class="timeline">
-              <div class="titem">
-                <div class="trole">Graduate Research Assistant — OSU SHARE Lab</div>
-                <div class="tmeta">Sep 2023 – Present</div>
-                <ul>
-                  <li>Develop data features from longitudinal sensor data monitoring older adults.</li>
-                  <li>Augment robot software for NRI grant work.</li>
-                </ul>
-              </div>
-              <div class="titem">
-                <div class="trole">Control Systems Engineer — Arcadis</div>
-                <div class="tmeta">Jan 2023 – Present</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="publications" class="card retro-outset">
-          <div class="section-header">Publications</div>
-          <div class="section-body retro-inset">
-            <ul class="listy">
-              <li><strong>2024:</strong> “I’m glad you remembered my name!” ... (HRI)</li>
-              <li><strong>2025:</strong> “You seem fun!” ... (WPA)</li>
-            </ul>
-          </div>
-        </section>
-      </main>
-
-      <aside class="side right" aria-label="Highlights">
-        <div class="widget retro-outset">
-          <div class="widget-title">Technical Skills</div>
-          <div class="widget-content">
-            <div class="statusbox">
-              <p><strong>ML/Data:</strong> Time-series, MICE/VAE, Survival Analysis</p>
-              <p><strong>Robotics:</strong> ROS 1/2, URDF, Gazebo, C++</p>
-              <p><strong>Systems:</strong> SCADA/I&C, FAT/SAT</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="widget retro-outset">
-          <div class="widget-title">Hobbies</div>
-          <div class="widget-content">
-            <ul class="mini">
-              <li>Tennis / pickleball</li>
-              <li>Robotics tinkering</li>
-              <li>Live music</li>
-            </ul>
-          </div>
-        </div>
-      </aside>
-    </div>
-
-    <footer class="footer">
-      <span>© <span id="year"></span> Jorge Ruballos</span>
-      <span class="sep">|</span>
-      <span>Best viewed in 800x600 resolution</span>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("updated").textContent = new Date().toLocaleDateString();
-  </script>
-</body>
-</html>
+                <p>
+                  Robotics simulator workspace for experimentation and integration work—supporting iterative development and reproducible te
