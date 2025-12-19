@@ -1,5 +1,6 @@
 /* =========================================================
    Retro Web Portal - 90s/Y2K Aesthetic (Flat, Win95-ish)
+   Single LEFT rail (both sidebars) + max center space
    ========================================================= */
 
 :root {
@@ -7,41 +8,36 @@
   --panel-bg: #c0c0c0;        /* Standard Win95 gray */
   --window-light: #ffffff;
   --window-dark: #808080;
-  --border-black: #000000;
   --header-blue: #000080;     /* Classic title bar blue */
 
   --ui-font: "MS Sans Serif", Tahoma, Verdana, sans-serif;
   --mono-font: "Courier New", Courier, monospace;
 
-  /* Spacing + sticky offsets */
+  /* Tight layout */
   --page-pad: 8px;
   --gap: 8px;
-  --sticky-top: 10px;         /* fallback if JS not used */
-  --masthead-gap: 8px;
 }
 
 /* Base */
-html, body {
-  height: 100%;
-}
+html, body { height: 100%; }
 
 body {
   margin: 0;
-  background-color: var(--bg-color);
+  background: var(--bg-color);
   font-family: var(--ui-font);
   font-size: 13px;
   color: #000;
-  line-height: 1.35; /* slightly tighter */
+  line-height: 1.35;
 }
 
-/* --- THE 90s BORDER (Outset) --- */
+/* --- 90s BORDER (Outset) --- */
 .retro-outset {
   border: 2px solid;
   border-color: var(--window-light) var(--window-dark) var(--window-dark) var(--window-light);
   background: var(--panel-bg);
 }
 
-/* --- THE 90s BORDER (Inset/Sunken) --- */
+/* --- 90s BORDER (Inset/Sunken) --- */
 .retro-inset {
   border: 2px solid;
   border-color: var(--window-dark) var(--window-light) var(--window-light) var(--window-dark);
@@ -58,15 +54,12 @@ body {
 }
 
 /* =========================================================
-   Sticky header
+   Header (NOT sticky)
    ========================================================= */
 .masthead {
   padding: 4px;
-  margin-bottom: var(--masthead-gap);
-
-  position: sticky;
-  top: 0;
-  z-index: 50; /* above sidebars/content */
+  margin-bottom: var(--gap);
+  /* not sticky */
 }
 
 .masthead-inner {
@@ -88,7 +81,7 @@ body {
 
 .mast-title h1 {
   margin: 0;
-  font-size: 26px; /* slightly smaller */
+  font-size: 26px;
   letter-spacing: 0.5px;
 }
 
@@ -112,7 +105,7 @@ body {
   background: var(--panel-bg);
   border: 2px solid;
   border-color: var(--window-light) var(--window-dark) var(--window-dark) var(--window-light);
-  padding: 3px 10px; /* tighter */
+  padding: 3px 10px;
   text-decoration: none;
   color: #000;
   font-weight: bold;
@@ -125,45 +118,41 @@ body {
 }
 
 /* =========================================================
-   Layout Grid
+   Layout Grid: ONE left rail + MAX center width
    ========================================================= */
 .portal {
   display: grid;
-  grid-template-columns: 220px 1fr 220px;
+  grid-template-columns: 210px 1fr; /* MAX center space: narrow rail */
   gap: var(--gap);
   align-items: start;
 }
 
-/* =========================================================
-   Sticky sidebars (offset below sticky header)
-   ========================================================= */
+/* Place both sidebars into left column, stacked */
+.side.left {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.side.right {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* Center spans both sidebar rows */
+.center {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* Sticky left rail (sticks below top of viewport) */
 .side {
   position: sticky;
-  top: calc(var(--sticky-top) + 56px); /* conservative default */
+  top: var(--page-pad);
   align-self: start;
 }
-
-/*
-  If you want perfect offset that matches header height exactly,
-  add this tiny JS in your HTML (optional):
-  <script>
-    const mh = document.querySelector('.masthead');
-    const setTop = () => {
-      const h = mh ? mh.getBoundingClientRect().height : 0;
-      document.documentElement.style.setProperty('--masthead-h', `${h}px`);
-    };
-    window.addEventListener('load', setTop);
-    window.addEventListener('resize', setTop);
-    setTop();
-  </script>
-
-  Then uncomment the block below and remove the conservative calc above.
-*/
-/*
-.side {
-  top: calc(var(--page-pad) + var(--masthead-h, 0px) + var(--masthead-gap));
-}
-*/
 
 /* =========================================================
    Sidebar Widgets
@@ -183,11 +172,18 @@ body {
 
 .widget-content {
   padding: 6px;
+  text-align: left;
 }
 
-.mini {
+/* Remove the “empty space” before Education/Hobbies content */
+.widget-content ul,
+.widget-content ol {
   margin: 0;
   padding-left: 16px;
+}
+
+.widget-content li {
+  margin: 2px 0;
 }
 
 .stack {
@@ -195,7 +191,7 @@ body {
   flex-direction: column;
 }
 
-/* Buttons (sidebar) */
+/* Sidebar buttons */
 .sidebtn {
   display: block;
   background: #eee;
@@ -213,23 +209,16 @@ body {
 }
 
 /* =========================================================
-   Main Content
+   Main Content Cards
    ========================================================= */
-.center {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-}
-
 .card {
   padding: 2px;
 }
 
-/* Section header/body (retro window style) */
 .section-header {
   background: #dfdfdf;
   border-bottom: 1px solid #808080;
-  padding: 4px 8px; /* tighter */
+  padding: 4px 8px;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -237,7 +226,7 @@ body {
 }
 
 .section-body {
-  padding: 12px; /* tighter */
+  padding: 12px;
   background: #fff;
 }
 
@@ -370,9 +359,7 @@ body {
 /* =========================================================
    Keyboard focus states (Win95-ish)
    ========================================================= */
-a:focus {
-  outline: none; /* avoid default glow */
-}
+a:focus { outline: none; }
 
 a:focus-visible,
 button:focus-visible,
@@ -393,16 +380,16 @@ button:focus-visible,
 }
 
 /* =========================================================
-   Mobile
+   Responsive
    ========================================================= */
 @media (max-width: 950px) {
   .portal { grid-template-columns: 200px 1fr; }
-  .side.right { display: none; } /* optional: hide right sidebar on medium screens */
 }
 
 @media (max-width: 850px) {
   .portal { grid-template-columns: 1fr; }
   .side { position: static; } /* sticky off on mobile */
+  .center { grid-column: 1; grid-row: auto; }
   .hero { flex-direction: column; }
   .portrait-box { width: 220px; }
 }
