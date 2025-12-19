@@ -1,10 +1,9 @@
 /* =========================================================
-   Retro Web Portal - High Contrast & Full Width
-   Sidebars are "Sticky" to follow scroll
+   Retro Web Portal - 90s/Y2K Aesthetic
    ========================================================= */
 
 :root {
-  --bg-color: #ffffff;   /* High Contrast White Background */
+  --bg-color: #a3adba;   /* Classic Desktop Gray-Blue */
   --panel-bg: #c0c0c0;  /* Standard Win95 Gray */
   --window-light: #ffffff;
   --window-dark: #808080;
@@ -18,10 +17,11 @@
 body {
   margin: 0;
   background-color: var(--bg-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   font-family: var(--ui-font);
-  font-size: 14px;
+  font-size: 13px;
   color: #000;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 /* --- THE 90s BORDER (Outset) --- */
@@ -39,22 +39,21 @@ body {
 }
 
 .page {
-  width: 100%; /* Cover the length of the screen */
-  padding: 20px;
-  box-sizing: border-box;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 10px;
 }
 
 /* Header Section */
 .masthead {
   padding: 4px;
-  margin-bottom: 20px;
-  width: 100%;
+  margin-bottom: 15px;
 }
 
 .masthead-inner {
   background: var(--header-blue);
   color: white;
-  padding: 12px 20px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,26 +61,27 @@ body {
 
 .mast-title h1 {
   margin: 0;
-  font-size: 32px;
+  font-size: 28px;
   letter-spacing: 1px;
 }
 
 .tagline {
-  font-size: 12px;
+  font-size: 11px;
   font-family: var(--mono-font);
 }
 
 /* Navigation */
 .top-pills {
   display: flex;
-  gap: 4px;
+  gap: 2px;
+  margin-top: 10px;
 }
 
 .pill {
   background: var(--panel-bg);
   border: 2px solid;
   border-color: var(--window-light) var(--window-dark) var(--window-dark) var(--window-light);
-  padding: 5px 15px;
+  padding: 4px 12px;
   text-decoration: none;
   color: black;
   font-weight: bold;
@@ -91,68 +91,62 @@ body {
   border-color: var(--window-dark) var(--window-light) var(--window-light) var(--window-dark);
 }
 
-/* Layout Grid - Sidebars Follow Scroll */
+/* Layout Grid */
 .portal {
   display: grid;
-  grid-template-columns: 240px 1fr 240px;
-  gap: 20px;
-  align-items: start;
-}
-
-.side {
-  position: sticky;
-  top: 20px; /* Sidebars stay in view when scrolling */
+  grid-template-columns: 200px 1fr 200px;
+  gap: 10px;
 }
 
 /* Sidebar Widgets */
 .widget {
   padding: 2px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .widget-title {
   background: #808080;
   color: white;
-  padding: 4px 8px;
+  padding: 3px 6px;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .widget-content {
-  padding: 12px;
+  padding: 8px;
 }
 
 /* Main Content Area */
 .center {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .card {
-  padding: 3px;
+  padding: 2px;
 }
 
 .section-header {
   background: #dfdfdf;
   border-bottom: 1px solid #808080;
-  padding: 6px 12px;
+  padding: 5px 10px;
   font-weight: bold;
 }
 
 .section-body {
-  padding: 20px;
+  padding: 15px;
   background: #fff;
 }
 
 /* About / Hero Section */
 .hero {
   display: flex;
-  gap: 25px;
+  gap: 20px;
 }
 
 .portrait-box {
-  width: 220px;
+  width: 180px;
   flex-shrink: 0;
 }
 
@@ -162,72 +156,57 @@ body {
   display: block;
 }
 
-/* Projects - High Contrast Meta */
+/* Projects - Full Width Row Layout */
 .cards.rows {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .mini-card {
   border-bottom: 1px dashed #808080;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }
 
 .mini-card h3 {
-  margin: 0 0 8px 0;
+  margin: 0 0 5px 0;
   color: #0000EE;
-  text-decoration: underline;
 }
 
 .meta {
   font-family: var(--mono-font);
-  font-size: 13px;
-  font-weight: bold;
-  color: #000; /* Pure black for readability */
-  background: #f0f0f0; /* Light highlight bar */
-  padding: 4px 8px;
-  display: inline-block;
-  margin-bottom: 10px;
-  border-left: 3px solid var(--header-blue);
+  font-size: 11px;
+  color: #555;
 }
 
 /* Buttons */
 .sidebtn {
   display: block;
   background: #eee;
-  border: 2px solid;
-  border-color: var(--window-light) var(--window-dark) var(--window-dark) var(--window-light);
-  margin-bottom: 6px;
-  padding: 8px;
+  border: 1px solid #000;
+  margin-bottom: 4px;
+  padding: 5px;
   text-decoration: none;
   color: #000;
-  font-size: 13px;
-  text-align: center;
-  font-weight: bold;
+  font-size: 12px;
 }
 
 .sidebtn:hover {
-  background: #ffffcc; /* Classic hover yellow */
-}
-
-.sidebtn:active {
-  border-color: var(--window-dark) var(--window-light) var(--window-light) var(--window-dark);
+  background: #ffffcc;
 }
 
 /* Footer */
 .footer {
-  margin-top: 40px;
+  margin-top: 20px;
   text-align: center;
   font-family: var(--mono-font);
-  font-size: 12px;
+  font-size: 11px;
   border-top: 1px solid #808080;
-  padding: 20px;
+  padding-top: 10px;
 }
 
 /* Mobile */
-@media (max-width: 1000px) {
+@media (max-width: 850px) {
   .portal { grid-template-columns: 1fr; }
-  .side { position: static; }
   .hero { flex-direction: column; }
 }
