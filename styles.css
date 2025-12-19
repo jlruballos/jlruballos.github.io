@@ -1,19 +1,18 @@
 /* =========================================================
    Retro Web Portal - 90s/Y2K Aesthetic (Flat, Win95-ish)
-   Single LEFT rail (both sidebars) + max center space
+   Sticky LEFT rail container (no overlap on scroll)
    ========================================================= */
 
 :root {
-  --bg-color: #ffffff;        /* White page background */
-  --panel-bg: #c0c0c0;        /* Standard Win95 gray */
+  --bg-color: #ffffff;
+  --panel-bg: #c0c0c0;
   --window-light: #ffffff;
   --window-dark: #808080;
-  --header-blue: #000080;     /* Classic title bar blue */
+  --header-blue: #000080;
 
   --ui-font: "MS Sans Serif", Tahoma, Verdana, sans-serif;
   --mono-font: "Courier New", Courier, monospace;
 
-  /* Tight layout */
   --page-pad: 8px;
   --gap: 8px;
 }
@@ -30,6 +29,8 @@ body {
   line-height: 1.35;
 }
 
+* { box-sizing: border-box; }
+
 /* --- 90s BORDER (Outset) --- */
 .retro-outset {
   border: 2px solid;
@@ -44,13 +45,12 @@ body {
   background: #fff;
 }
 
-/* Full-viewport layout */
+/* Page wrapper */
 .page {
   width: 100%;
   min-height: 100vh;
   margin: 0;
   padding: var(--page-pad);
-  box-sizing: border-box;
 }
 
 /* =========================================================
@@ -59,7 +59,6 @@ body {
 .masthead {
   padding: 4px;
   margin-bottom: var(--gap);
-  /* not sticky */
 }
 
 .masthead-inner {
@@ -91,9 +90,7 @@ body {
   font-family: var(--mono-font);
 }
 
-/* =========================================================
-   Navigation
-   ========================================================= */
+/* Navigation */
 .top-pills {
   display: flex;
   gap: 2px;
@@ -118,48 +115,51 @@ body {
 }
 
 /* =========================================================
-   Layout Grid: ONE left rail + MAX center width
+   Layout: max center + sticky rail container
    ========================================================= */
 .portal {
   display: grid;
-  grid-template-columns: 210px 1fr; /* MAX center space: narrow rail */
+  grid-template-columns: 210px 1fr;
   gap: var(--gap);
   align-items: start;
 }
 
-/* Place both sidebars into left column, stacked */
-.side.left {
-  grid-column: 1;
-  grid-row: 1;
+/* Sticky rail is a SINGLE element (prevents overlap) */
+.left-rail {
+  position: sticky;
+  top: var(--page-pad);
+  align-self: start;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+
+  max-height: calc(100vh - (var(--page-pad) * 2));
+  overflow: auto;
+  overscroll-behavior: contain;
 }
 
-.side.right {
-  grid-column: 1;
-  grid-row: 2;
+/* Aside wrappers have no borders/margins; widget owns the look */
+.side {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
-/* Center spans both sidebar rows */
+/* Center */
 .center {
-  grid-column: 2;
-  grid-row: 1 / span 2;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
 }
 
-/* Sticky left rail (sticks below top of viewport) */
-.side {
-  position: sticky;
-  top: var(--page-pad);
-  align-self: start;
-}
-
 /* =========================================================
-   Sidebar Widgets
+   Sidebar widgets
    ========================================================= */
 .widget {
   padding: 2px;
-  margin-bottom: var(--gap);
+  margin: 0;
 }
 
 .widget-title {
@@ -175,7 +175,7 @@ body {
   text-align: left;
 }
 
-/* Remove the “empty space” before Education/Hobbies content */
+/* Tight lists (fixes “blank space” look) */
 .widget-content ul,
 .widget-content ol {
   margin: 0;
@@ -191,7 +191,6 @@ body {
   flex-direction: column;
 }
 
-/* Sidebar buttons */
 .sidebtn {
   display: block;
   background: #eee;
@@ -209,7 +208,7 @@ body {
 }
 
 /* =========================================================
-   Main Content Cards
+   Main content cards
    ========================================================= */
 .card {
   padding: 2px;
@@ -273,16 +272,15 @@ body {
   flex-wrap: wrap;
 }
 
-/* Projects list */
-.cards.rows {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
+/* Project mini cards */
 .mini-card {
   border-bottom: 1px dashed #808080;
   padding-bottom: 8px;
+}
+
+.mini-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .mini-card h3 {
@@ -344,9 +342,7 @@ body {
   margin: 0;
 }
 
-/* =========================================================
-   Footer
-   ========================================================= */
+/* Footer */
 .footer {
   margin-top: 10px;
   text-align: center;
@@ -356,9 +352,7 @@ body {
   padding-top: 8px;
 }
 
-/* =========================================================
-   Keyboard focus states (Win95-ish)
-   ========================================================= */
+/* Keyboard focus states */
 a:focus { outline: none; }
 
 a:focus-visible,
@@ -374,22 +368,18 @@ button:focus-visible,
   outline-offset: 2px;
 }
 
-/* Optional: "sunken" look on focus for pills */
 .pill:focus-visible {
   border-color: var(--window-dark) var(--window-light) var(--window-light) var(--window-dark);
 }
 
-/* =========================================================
-   Responsive
-   ========================================================= */
+/* Responsive */
 @media (max-width: 950px) {
   .portal { grid-template-columns: 200px 1fr; }
 }
 
 @media (max-width: 850px) {
   .portal { grid-template-columns: 1fr; }
-  .side { position: static; } /* sticky off on mobile */
-  .center { grid-column: 1; grid-row: auto; }
+  .left-rail { position: static; max-height: none; overflow: visible; }
   .hero { flex-direction: column; }
   .portrait-box { width: 220px; }
 }
